@@ -1,7 +1,8 @@
 module.exports = {
-  extends: 'standard',
+  extends: ['standard', 'plugin:react/all'],
   plugins: ['react', 'import'],
   rules: {
-    semi: ['error', 'always']
+    semi: ['error', 'always'],
+    'react/jsx-no-literals': [{ noStrings: false }]
   }
 };
