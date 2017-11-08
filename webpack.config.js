@@ -9,7 +9,8 @@ const config = {
   entry: JS_DIR + '/application.jsx',
   output: {
     path: BUILD_DIR,
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: 'dist/'
   },
   resolve: {
     extensions: ['.js', '.jsx']
@@ -20,6 +21,10 @@ const config = {
         test: /\.jsx?/,
         include: JS_DIR,
         loader: 'babel-loader'
+      },
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        loader: 'file-loader?name=assets/[name].[ext]'
       }
     ]
   }
