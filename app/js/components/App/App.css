@@ -1,0 +1,15 @@
+:root {
+  --background: #eee;
+  --text: #eee;
+  --mapWidth: 736px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 100%;
+  background: var(--background);
+}

@@ -25,6 +25,24 @@ const config = {
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
         loader: 'file-loader?name=assets/[name].[ext]'
+      },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true
+            }
+          },
+          {
+            loader: 'postcss-loader'
+          }
+        ]
       }
     ]
   }
