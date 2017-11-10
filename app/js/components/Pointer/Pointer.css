@@ -1,0 +1,65 @@
+:root {
+  --pointerColor: #000;
+  --pointerSize: 20px;
+  --detailsBackground: #333;
+}
+
+.pointer {
+  position: absolute;
+  background: var(--pointerColor);
+  width: var(--pointerSize);
+  height: var(--pointerSize);
+  border-radius: var(--pointerSize);
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.5);
+  background: url('../../../img/pointer.png') center center no-repeat;
+  background-size: var(--pointerSize) var(--pointerSize);
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.details {
+  cursor: default;
+  background: var(--detailsBackground);
+  width: 300px;
+  border-radius: var(--pointerSize);
+  padding: 10px;
+  color: #fff;
+  position: relative;
+  top: -3px;
+  left: -3px;
+  box-shadow: inset 0 0 8px 3px rgba(0, 0, 0, 0.2);
+  border: 1px solid #555;
+
+  h3 {
+    margin: 5px 0;
+  }
+
+  p {
+    margin: 10px 0;
+    font-size: 14px;
+
+    &:last-child {
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.headline {
+  display: flex;
+  justify-content: space-between;
+}
+
+.close {
+  align-self: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+}

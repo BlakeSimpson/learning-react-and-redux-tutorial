@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Pointer from '../Pointer';
+
 import westeros from '../../../img/westeros.jpg';
 import styles from './Map.css';
 
@@ -82,6 +84,8 @@ const Map = () => {
   return (
     <div className={styles.map}>
       <img src={westeros} />
+
+      {points.map((point, index) => <Pointer {...point} key={index} />)}
     </div>
   );
 };

@@ -1,12 +1,15 @@
 :root {
   --background: #eee;
   --text: #eee;
-  --mapWidth: 736px;
+  --mapWidth: 772px;
+  --mapHeight: 1518px;
+  --fontStack: Palatino, Georgia, serif;
 }
 
 body {
   margin: 0;
   padding: 0;
+  font-family: var(--fontStack);
 }
 
 .wrapper {
