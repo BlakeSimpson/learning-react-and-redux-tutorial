@@ -6,7 +6,8 @@
 
 .pointer {
   position: absolute;
-  background: var(--pointerColor);
+  background: var(--pointerColor) url('../../../img/pointer.png');
+  background-size: var(--pointerSize) var(--pointerSize);
   width: var(--pointerSize);
   height: var(--pointerSize);
   border-radius: var(--pointerSize);

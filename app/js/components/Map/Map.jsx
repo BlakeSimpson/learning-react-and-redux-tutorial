@@ -2,22 +2,21 @@ import React from 'react';
 
 import Pointer from '../Pointer';
 
-import westeros from '../../../img/westeros.jpg';
 import styles from './Map.css';
 
 const points = [
   {
-    x: 430,
-    y: 55,
+    x: 450,
+    y: 110,
     details: {
       name: 'The Wall',
       house: "Night's Watch",
-      description: 'Night gathers, and now my watch begins.'
+      words: 'Night gathers, and now my watch begins.'
     }
   },
   {
-    x: 355,
-    y: 300,
+    x: 375,
+    y: 355,
     details: {
       name: 'Winterfell',
       house: 'Stark',
@@ -25,8 +24,8 @@ const points = [
     }
   },
   {
-    x: 325,
-    y: 650,
+    x: 345,
+    y: 705,
     details: {
       name: 'The Twins',
       house: 'Frey',
@@ -34,8 +33,8 @@ const points = [
     }
   },
   {
-    x: 135,
-    y: 720,
+    x: 155,
+    y: 775,
     details: {
       name: 'The Iron Islands',
       house: 'Greyjoy',
@@ -44,7 +43,7 @@ const points = [
   },
   {
     x: 150,
-    y: 880,
+    y: 945,
     details: {
       name: 'Casterly Rock',
       house: 'Lannister',
@@ -52,8 +51,8 @@ const points = [
     }
   },
   {
-    x: 525,
-    y: 945,
+    x: 545,
+    y: 1000,
     details: {
       name: "King's Landing",
       house: 'Baratheon',
@@ -61,21 +60,12 @@ const points = [
     }
   },
   {
-    x: 237,
-    y: 1145,
+    x: 250,
+    y: 1190,
     details: {
       name: 'Highgarden',
       house: 'Tyrell',
       words: 'Growing Strong'
-    }
-  },
-  {
-    x: 615,
-    y: 1335,
-    details: {
-      name: 'Sunspear',
-      house: 'Martell',
-      words: 'Unbowed, Unbent, Unbroken'
     }
   }
 ];
@@ -83,8 +73,6 @@ const points = [
 const Map = () => {
   return (
     <div className={styles.map}>
-      <img src={westeros} />
-
       {points.map((point, index) => <Pointer {...point} key={index} />)}
     </div>
   );

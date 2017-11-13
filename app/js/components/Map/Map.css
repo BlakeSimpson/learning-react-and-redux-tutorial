@@ -2,5 +2,8 @@
   position: relative;
   margin: 0 auto;
   width: var(--mapWidth);
+  height: var(--mapHeight);
+  background-image: url('../../../img/westeros.jpg');
+  background-size: var(--mapWidth) var(--mapHeight);
   box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.4);
 }
