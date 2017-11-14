@@ -14,6 +14,7 @@ class Pointer extends Component {
     };
 
     this.toggle = this.toggle.bind(this);
+    this.favourite = this.favourite.bind(this);
   }
 
   toggle (event) {
@@ -22,6 +23,10 @@ class Pointer extends Component {
     if (event.target === event.currentTarget) {
       this.setState({ open: !this.state.open });
     }
+  }
+
+  favourite () {
+    this.setState({ favourite: !this.state.favourite });
   }
 
   render () {
@@ -45,9 +50,15 @@ class Pointer extends Component {
         <div className={detailsClasses}>
           <header className={styles.headline}>
             <h3>{name}</h3>
-            <a href="#" className={styles.close} onClick={this.toggle}>
-              &times;
-            </a>
+
+            <div className={styles.detailsControls}>
+              <a href="#" className={styles.control} onClick={this.favourite}>
+                {this.state.favourite ? '–' : '+'}
+              </a>
+              <a href="#" className={styles.control} onClick={this.toggle}>
+                &times;
+              </a>
+            </div>
           </header>
 
           <p>House: {house}</p>

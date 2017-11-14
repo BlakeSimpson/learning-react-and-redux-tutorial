@@ -57,7 +57,13 @@
   justify-content: space-between;
 }
 
-.close {
+.detailsControls {
+  .control {
+    margin-left: 10px;
+  }
+}
+
+.control {
   align-self: center;
   text-decoration: none;
   color: #fff;
