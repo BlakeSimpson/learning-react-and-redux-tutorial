@@ -9,7 +9,8 @@ class Pointer extends Component {
     super(props);
 
     this.state = {
-      open: false
+      open: false,
+      favourite: props.favourite
     };
 
     this.toggle = this.toggle.bind(this);
@@ -26,13 +27,18 @@ class Pointer extends Component {
   render () {
     const { x, y, details } = this.props;
     const { name, house, words } = details;
+
+    const pointerClasses = classNames(styles.pointer, {
+      [styles.favourite]: this.state.favourite
+    });
+
     const detailsClasses = classNames(styles.details, {
       [styles.hidden]: !this.state.open
     });
 
     return (
       <div
-        className={styles.pointer}
+        className={pointerClasses}
         style={{ left: x, top: y }}
         onClick={this.toggle}
       >
@@ -55,7 +61,8 @@ class Pointer extends Component {
 Pointer.propTypes = {
   x: PropTypes.number,
   y: PropTypes.number,
-  details: PropTypes.object
+  details: PropTypes.object,
+  favourite: PropTypes.bool
 };
 
 export default Pointer;

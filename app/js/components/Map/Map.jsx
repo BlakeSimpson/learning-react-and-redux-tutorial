@@ -12,7 +12,8 @@ const points = [
       name: 'The Wall',
       house: "Night's Watch",
       words: 'Night gathers, and now my watch begins.'
-    }
+    },
+    favourite: true
   },
   {
     x: 375,
