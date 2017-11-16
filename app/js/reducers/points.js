@@ -1,3 +1,5 @@
+import { FAVOURITE_ADDED, FAVOURITE_REMOVED } from '../constants';
+
 const initialState = [
   {
     x: 450,
@@ -66,8 +68,25 @@ const initialState = [
   }
 ];
 
+const updateFavouriteState = (index, newValue, points) => {
+  const updatedPoint = points[index];
+  updatedPoint.favourite = newValue;
+
+  return [...points.slice(0, index), updatedPoint, ...points.slice(index + 1)];
+};
+
 const points = (state = initialState, action) => {
+  let index;
+
   switch (action.type) {
+    case FAVOURITE_ADDED:
+      index = action.payload.index;
+      return updateFavouriteState(index, true, state);
+
+    case FAVOURITE_REMOVED:
+      index = action.payload.index;
+      return updateFavouriteState(index, false, state);
+
     default:
       return state;
   }
