@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import { removeFavourite } from '../../actions';
 import styles from './FavouritesList.css';
 
-const FavouritesList = ({ points }) => {
+const FavouritesList = ({ points, remove }) => {
   const favourites = points.filter(point => point.favourite);
 
   return (
@@ -12,7 +13,13 @@ const FavouritesList = ({ points }) => {
       <h3>Favourites</h3>
       <ul className={styles.list}>
         {favourites.map((favourite, index) => (
-          <li key={index}>{favourite.details.name}</li>
+          <li key={index}>
+            <button onClick={() => remove(index)} className={styles.remove}>
+              &times;
+            </button>
+
+            <span>{favourite.details.name}</span>
+          </li>
         ))}
       </ul>
     </div>
@@ -20,7 +27,8 @@ const FavouritesList = ({ points }) => {
 };
 
 FavouritesList.propTypes = {
-  points: PropTypes.arrayOf(PropTypes.object)
+  points: PropTypes.arrayOf(PropTypes.object),
+  remove: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => {
@@ -29,6 +37,16 @@ const mapStateToProps = state => {
   };
 };
 
-const ConnectedFavouritesList = connect(mapStateToProps)(FavouritesList);
+const mapDispatchToProps = dispatch => {
+  return {
+    remove: index => {
+      dispatch(removeFavourite(index));
+    }
+  };
+};
+
+const ConnectedFavouritesList = connect(mapStateToProps, mapDispatchToProps)(
+  FavouritesList
+);
 
 export default ConnectedFavouritesList;
