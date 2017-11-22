@@ -2,6 +2,7 @@ import { FAVOURITE_ADDED, FAVOURITE_REMOVED } from '../constants';
 
 const initialState = [
   {
+    id: 1,
     x: 450,
     y: 110,
     details: {
@@ -12,6 +13,7 @@ const initialState = [
     favourite: true
   },
   {
+    id: 2,
     x: 375,
     y: 355,
     details: {
@@ -22,6 +24,7 @@ const initialState = [
     favourite: true
   },
   {
+    id: 3,
     x: 345,
     y: 705,
     details: {
@@ -31,6 +34,7 @@ const initialState = [
     }
   },
   {
+    id: 4,
     x: 155,
     y: 775,
     details: {
@@ -40,6 +44,7 @@ const initialState = [
     }
   },
   {
+    id: 5,
     x: 150,
     y: 945,
     details: {
@@ -49,6 +54,7 @@ const initialState = [
     }
   },
   {
+    id: 6,
     x: 545,
     y: 1000,
     details: {
@@ -58,6 +64,7 @@ const initialState = [
     }
   },
   {
+    id: 7,
     x: 250,
     y: 1190,
     details: {
@@ -68,24 +75,26 @@ const initialState = [
   }
 ];
 
-const updateFavouriteState = (index, newValue, points) => {
-  const updatedPoint = points[index];
+const updateFavouriteState = (id, newValue, points) => {
+  const updatedPoint = points.filter(point => point.id === id)[0];
+  const index = points.indexOf(updatedPoint);
+
   updatedPoint.favourite = newValue;
 
   return [...points.slice(0, index), updatedPoint, ...points.slice(index + 1)];
 };
 
 const points = (state = initialState, action) => {
-  let index;
+  let id;
 
   switch (action.type) {
     case FAVOURITE_ADDED:
-      index = action.payload.index;
-      return updateFavouriteState(index, true, state);
+      id = action.payload.id;
+      return updateFavouriteState(id, true, state);
 
     case FAVOURITE_REMOVED:
-      index = action.payload.index;
-      return updateFavouriteState(index, false, state);
+      id = action.payload.id;
+      return updateFavouriteState(id, false, state);
 
     default:
       return state;

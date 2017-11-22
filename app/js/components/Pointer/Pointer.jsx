@@ -28,12 +28,12 @@ class Pointer extends Component {
   }
 
   favourite () {
-    const { index, favourite, removeFavourite, addFavourite } = this.props;
+    const { id, favourite, removeFavourite, addFavourite } = this.props;
 
     if (favourite) {
-      removeFavourite(index);
+      removeFavourite(id);
     } else {
-      addFavourite(index);
+      addFavourite(id);
     }
   }
 
@@ -81,7 +81,7 @@ class Pointer extends Component {
 Pointer.propTypes = {
   addFavourite: PropTypes.func,
   removeFavourite: PropTypes.func,
-  index: PropTypes.number,
+  id: PropTypes.number,
   x: PropTypes.number,
   y: PropTypes.number,
   details: PropTypes.object,
@@ -94,12 +94,12 @@ const ConnectedPointer = props => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    addFavourite: index => {
-      dispatch(addFavourite(index));
+    addFavourite: id => {
+      dispatch(addFavourite(id));
     },
 
-    removeFavourite: index => {
-      dispatch(removeFavourite(index));
+    removeFavourite: id => {
+      dispatch(removeFavourite(id));
     }
   };
 };
