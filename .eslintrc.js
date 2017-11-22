@@ -3,5 +3,8 @@ module.exports = {
   plugins: ['react', 'import'],
   rules: {
     semi: ['error', 'always']
+  },
+  env: {
+    jest: true
   }
 };
