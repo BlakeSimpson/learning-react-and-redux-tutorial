@@ -6,7 +6,7 @@ import Pointer from '../Pointer';
 
 import styles from './Map.css';
 
-const Map = ({ points }) => {
+export const Map = ({ points }) => {
   return (
     <div className={styles.map}>
       {points.map((point, index) => <Pointer {...point} key={index} />)}
