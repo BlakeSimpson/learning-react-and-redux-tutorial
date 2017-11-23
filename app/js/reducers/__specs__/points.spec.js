@@ -1,20 +1,16 @@
 import reducer from '../points';
 import { addFavourite, removeFavourite } from '../../actions';
 
+const buildPoints = (firstFavourite = false, secondFavourite = true) => [
+  { id: 1, favourite: firstFavourite },
+  { id: 2, favourite: secondFavourite }
+];
+
 describe('Points reducer', () => {
   let initialPoints;
 
   beforeEach(() => {
-    initialPoints = [
-      {
-        id: 1,
-        favourite: false
-      },
-      {
-        id: 2,
-        favourite: true
-      }
-    ];
+    initialPoints = buildPoints();
   });
 
   it('returns the initial state', () => {
@@ -25,17 +21,7 @@ describe('Points reducer', () => {
     it('can update a point to be a favourite', () => {
       const action = addFavourite(1);
       const result = reducer(initialPoints, action);
-
-      let expected = [
-        {
-          id: 1,
-          favourite: true
-        },
-        {
-          id: 2,
-          favourite: true
-        }
-      ];
+      const expected = buildPoints(true, true);
 
       expect(result).toEqual(expected);
     });
@@ -43,17 +29,7 @@ describe('Points reducer', () => {
     it('can remove a point from being a favourite', () => {
       const action = removeFavourite(2);
       const result = reducer(initialPoints, action);
-
-      let expected = [
-        {
-          id: 1,
-          favourite: false
-        },
-        {
-          id: 2,
-          favourite: false
-        }
-      ];
+      const expected = buildPoints(false, false);
 
       expect(result).toEqual(expected);
     });
