@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { removeFavourite } from '../../actions';
 import styles from './FavouritesList.css';
 
-const FavouritesList = ({ points, remove }) => {
+export const FavouritesList = ({ points, remove }) => {
   const favourites = points.filter(point => point.favourite);
 
   return (
