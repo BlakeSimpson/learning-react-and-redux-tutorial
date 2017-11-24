@@ -28,6 +28,25 @@ describe('Pointer', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
+
+  describe('when the toggle button is clicked', () => {
+    it('changes open state to true, if it is false', () => {
+      const wrapper = mount(<Pointer {...pointerProps} />);
+
+      wrapper.find('a[href="#toggle"]').simulate('click');
+
+      expect(wrapper.state('open')).toEqual(true);
+    });
+
+    it('changes open state to true, if it is false', () => {
+      const wrapper = mount(<Pointer {...pointerProps} />);
+
+      wrapper.setState({ open: true });
+      wrapper.find('a[href="#toggle"]').simulate('click');
+
+      expect(wrapper.state('open')).toEqual(false);
+    });
+  });
 });
 
 describe('ConnectedApp', () => {
