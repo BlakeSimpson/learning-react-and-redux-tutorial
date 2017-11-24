@@ -7,7 +7,7 @@ import { addFavourite, removeFavourite } from '../../actions';
 
 import styles from './Pointer.css';
 
-class Pointer extends Component {
+export class Pointer extends Component {
   constructor (props) {
     super(props);
 
@@ -60,11 +60,19 @@ class Pointer extends Component {
             <h3>{name}</h3>
 
             <div className={styles.detailsControls}>
-              <a href="#" className={styles.control} onClick={this.favourite}>
+              <a
+                href="#favourite"
+                className={styles.control}
+                onClick={this.favourite}
+              >
                 {favourite ? '–' : '+'}
               </a>
 
-              <a href="#" className={styles.control} onClick={this.toggle}>
+              <a
+                href="#toggle"
+                className={styles.control}
+                onClick={this.toggle}
+              >
                 &times;
               </a>
             </div>
