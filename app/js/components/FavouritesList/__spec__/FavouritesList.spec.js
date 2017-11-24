@@ -1,8 +1,9 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import configureStore from 'redux-mock-store';
 
 import { pointsMock } from '../../../spec-helper';
+import { removeFavourite } from '../../../actions';
 import ConnectedFavouritesList, { FavouritesList } from '../';
 
 const noop = () => {};
@@ -35,5 +36,16 @@ describe('ConnectedApp', () => {
     const wrapper = shallow(<ConnectedFavouritesList store={store} />);
 
     expect(wrapper).toMatchSnapshot();
+  });
+
+  describe('when the delete button is clicked', () => {
+    it('calls the removeFavourite action', () => {
+      const wrapper = mount(<ConnectedFavouritesList store={store} />);
+      const expectedAction = [removeFavourite(1)];
+
+      wrapper.find('button').simulate('click');
+
+      expect(store.getActions()).toEqual(expectedAction);
+    });
   });
 });
