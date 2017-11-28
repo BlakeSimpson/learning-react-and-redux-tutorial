@@ -1,0 +1,9 @@
+{
+  "name": "a-map-of-thrones",
+  "version": "1.0.0",
+  "description": "A React Tutorial of Fire and Ice",
+  "main": "index.js",
+  "repository": "git@personal.bitbucket.org:blake/learning-react-typescript.git",
+  "author": "Blake Simpson <blake.simpson@kartenmacherei.de>",
+  "license": "MIT"
+}
