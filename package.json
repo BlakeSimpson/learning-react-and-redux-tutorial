@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "A React Tutorial of Fire and Ice",
   "main": "index.js",
-  "repository":
-    "git@personal.bitbucket.org:blake/learning-react-typescript.git",
+  "repository": "git@personal.bitbucket.org:blake/learning-react-typescript.git",
   "author": "Blake Simpson <blake.simpson@kartenmacherei.de>",
   "license": "MIT",
   "scripts": {
@@ -12,6 +11,10 @@
     "build": "webpack -p"
   },
   "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "webpack": "^3.8.1"
   }
 }
