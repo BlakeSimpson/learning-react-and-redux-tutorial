@@ -1,0 +1,16 @@
+:root {
+  --background: #171a1d;
+  --text: #fff;
+  --fontStack: Palatino, Georgia, serif;
+
+  --mapWidth: 772px;
+  --mapHeight: 1518px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: var(--fontStack);
+}

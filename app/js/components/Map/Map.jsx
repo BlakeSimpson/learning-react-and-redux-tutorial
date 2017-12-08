@@ -1,9 +1,9 @@
 import React from 'react';
 
-import westeros from '../../../img/westeros.jpg';
+import styles from './Map.css';
 
 const Map = () => {
-  return <img src={westeros} />;
+  return <div className={styles.map} />;
 };
 
 export default Map;
