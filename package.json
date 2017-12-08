@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "A React Tutorial of Fire and Ice",
   "main": "index.js",
-  "repository": "git@personal.bitbucket.org:blake/learning-react-typescript.git",
+  "repository":
+    "git@personal.bitbucket.org:blake/learning-react-typescript.git",
   "author": "Blake Simpson <blake.simpson@kartenmacherei.de>",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack -d",
+    "dev": "webpack-dev-server",
     "build": "webpack -p",
     "lint:all": "eslint app/js/*",
     "lint:fix": "eslint app/js/* --fix"
@@ -37,6 +38,7 @@
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-react": "^7.5.1",
     "eslint-plugin-standard": "^3.0.1",
-    "prettier-eslint": "^8.2.2"
+    "prettier-eslint": "^8.2.2",
+    "webpack-dev-server": "^2.9.7"
   }
 }
