@@ -1,0 +1,20 @@
+:root {
+  --pointerColor: #000;
+  --pointerSize: 20px;
+  --detailsBackground: #333;
+}
+
+.pointer {
+  position: absolute;
+  background: var(--pointerColor);
+  width: var(--pointerSize);
+  height: var(--pointerSize);
+  border-radius: var(--pointerSize);
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.5);
+  background: url('../../../img/pointer.png') center center no-repeat;
+  background-size: var(--pointerSize) var(--pointerSize);
+
+  &:hover {
+    cursor: pointer;
+  }
+}
