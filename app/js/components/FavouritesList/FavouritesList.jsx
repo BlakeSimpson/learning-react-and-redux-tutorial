@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import styles from './FavouritesList.css';
 
-const FavouritesList = ({ points }) => {
+export const FavouritesList = ({ points }) => {
   const favourites = points.filter(point => point.favourite);
 
   return (
@@ -22,4 +23,12 @@ FavouritesList.propTypes = {
   points: PropTypes.arrayOf(PropTypes.object)
 };
 
-export default FavouritesList;
+const mapStateToProps = state => {
+  return {
+    points: state.points
+  };
+};
+
+const ConnectedFavouritesList = connect(mapStateToProps)(FavouritesList);
+
+export default ConnectedFavouritesList;
