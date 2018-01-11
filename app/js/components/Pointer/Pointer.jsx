@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { connect } from 'react-redux';
 
+import { addFavourite, removeFavourite } from '../../actions';
 import styles from './Pointer.css';
 
 class Pointer extends Component {
@@ -9,8 +11,7 @@ class Pointer extends Component {
     super(props);
 
     this.state = {
-      open: false,
-      favourite: props.favourite
+      open: false
     };
 
     this.toggle = this.toggle.bind(this);
@@ -26,15 +27,21 @@ class Pointer extends Component {
   }
 
   favourite () {
-    this.setState({ favourite: !this.state.favourite });
+    const { index, favourite, removeFavourite, addFavourite } = this.props;
+
+    if (favourite) {
+      removeFavourite(index);
+    } else {
+      addFavourite(index);
+    }
   }
 
   render () {
-    const { x, y, details } = this.props;
+    const { x, y, details, favourite } = this.props;
     const { name, house, words } = details;
 
     const pointerClasses = classNames(styles.pointer, {
-      [styles.favourite]: this.state.favourite
+      [styles.favourite]: favourite
     });
 
     const detailsClasses = classNames(styles.details, {
@@ -52,7 +59,7 @@ class Pointer extends Component {
             <h3>{name}</h3>
             <div className={styles.detailsControls}>
               <a href="#" className={styles.control} onClick={this.favourite}>
-                {this.state.favourite ? '–' : '+'}
+                {favourite ? '–' : '+'}
               </a>
 
               <a href="#" className={styles.control} onClick={this.toggle}>
@@ -70,10 +77,27 @@ class Pointer extends Component {
 }
 
 Pointer.propTypes = {
+  addFavourite: PropTypes.func,
+  removeFavourite: PropTypes.func,
+  index: PropTypes.number,
   details: PropTypes.object.isRequired,
   x: PropTypes.number.isRequired,
   y: PropTypes.number.isRequired,
   favourite: PropTypes.bool
 };
 
-export default Pointer;
+const mapDispatchToProps = dispatch => {
+  return {
+    addFavourite: index => {
+      dispatch(addFavourite(index));
+    },
+
+    removeFavourite: index => {
+      dispatch(removeFavourite(index));
+    }
+  };
+};
+
+const ConnectedPointer = connect(null, mapDispatchToProps)(Pointer);
+
+export default ConnectedPointer;
