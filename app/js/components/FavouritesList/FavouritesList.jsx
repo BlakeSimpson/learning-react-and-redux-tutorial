@@ -12,9 +12,12 @@ export const FavouritesList = ({ points, remove }) => {
     <div className={styles.listWrapper}>
       <h3>Favourites</h3>
       <ul className={styles.list}>
-        {favourites.map((favourite, index) => (
-          <li key={index}>
-            <button onClick={() => remove(index)} className={styles.remove}>
+        {favourites.map(favourite => (
+          <li key={favourite.id}>
+            <button
+              onClick={() => remove(favourite.id)}
+              className={styles.remove}
+            >
               &times;
             </button>
 
@@ -39,8 +42,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    remove: index => {
-      dispatch(removeFavourite(index));
+    remove: id => {
+      dispatch(removeFavourite(id));
     }
   };
 };

@@ -27,12 +27,12 @@ class Pointer extends Component {
   }
 
   favourite () {
-    const { index, favourite, removeFavourite, addFavourite } = this.props;
+    const { id, favourite, removeFavourite, addFavourite } = this.props;
 
     if (favourite) {
-      removeFavourite(index);
+      removeFavourite(id);
     } else {
-      addFavourite(index);
+      addFavourite(id);
     }
   }
 
@@ -79,7 +79,7 @@ class Pointer extends Component {
 Pointer.propTypes = {
   addFavourite: PropTypes.func,
   removeFavourite: PropTypes.func,
-  index: PropTypes.number,
+  id: PropTypes.string,
   details: PropTypes.object.isRequired,
   x: PropTypes.number.isRequired,
   y: PropTypes.number.isRequired,

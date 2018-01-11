@@ -1,19 +1,19 @@
 import { FAVOURITE_ADDED, FAVOURITE_REMOVED } from '../constants';
 
-export const addFavourite = index => {
+export const addFavourite = id => {
   return {
     type: FAVOURITE_ADDED,
     payload: {
-      index: index
+      id: id
     }
   };
 };
 
-export const removeFavourite = index => {
+export const removeFavourite = id => {
   return {
     type: FAVOURITE_REMOVED,
     payload: {
-      index: index
+      id: id
     }
   };
 };

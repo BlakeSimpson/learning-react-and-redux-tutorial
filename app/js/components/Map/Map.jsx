@@ -8,9 +8,7 @@ import styles from './Map.css';
 export const Map = ({ points }) => {
   return (
     <div className={styles.map}>
-      {points.map((point, index) => (
-        <Pointer {...point} index={index} key={index} />
-      ))}
+      {points.map(point => <Pointer {...point} key={point.id} />)}
     </div>
   );
 };
