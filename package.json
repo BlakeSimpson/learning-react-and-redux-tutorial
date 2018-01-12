@@ -16,6 +16,13 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
   },
+  "jest": {
+    "setupTestFrameworkScriptFile": "./app/js/spec-helper.js",
+    "snapshotSerializers": ["enzyme-to-json/serializer"],
+    "transform": {
+      ".*": "./node_modules/jest-css-modules"
+    }
+  },
   "dependencies": {
     "autoprefixer": "^7.2.2",
     "babel-core": "^6.26.0",
@@ -37,6 +44,9 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.0.2",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.0",
     "eslint": "^4.12.1",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.8.0",
@@ -45,6 +55,7 @@
     "eslint-plugin-react": "^7.5.1",
     "eslint-plugin-standard": "^3.0.1",
     "jest": "^22.0.6",
+    "jest-css-modules": "^1.1.0",
     "prettier-eslint": "^8.2.2",
     "webpack-dev-server": "^2.9.7"
   }
