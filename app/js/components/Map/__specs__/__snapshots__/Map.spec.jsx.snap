@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Map component when there are no points matches the snapshot 1`] = `<div />`;
+
+exports[`Map component when there are points matches the snapshot 1`] = `
+<div>
+  <Connect(Pointer)
+    details={
+      Object {
+        "house": "Night's Watch",
+        "name": "The Wall",
+        "words": "Night gathers, and now my watch begins.",
+      }
+    }
+    favourite={true}
+    id="point-1"
+    key="point-1"
+    x={450}
+    y={110}
+  />
+  <Connect(Pointer)
+    details={
+      Object {
+        "house": "Stark",
+        "name": "Winterfell",
+        "words": "Winter is Coming",
+      }
+    }
+    favourite={false}
+    id="point-2"
+    key="point-2"
+    x={375}
+    y={355}
+  />
+</div>
+`;
