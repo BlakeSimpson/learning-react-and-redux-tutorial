@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "A React Tutorial of Fire and Ice",
   "main": "index.js",
-  "repository":
-    "git@personal.bitbucket.org:blake/learning-react-typescript.git",
+  "repository": "git@personal.bitbucket.org:blake/learning-react-typescript.git",
   "author": "Blake Simpson <blake.simpson@kartenmacherei.de>",
   "license": "MIT",
   "scripts": {
@@ -18,7 +17,9 @@
   },
   "jest": {
     "setupTestFrameworkScriptFile": "./app/js/spec-helper.js",
-    "snapshotSerializers": ["enzyme-to-json/serializer"],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
     "transform": {
       ".*": "./node_modules/jest-css-modules"
     }
@@ -57,6 +58,7 @@
     "jest": "^22.0.6",
     "jest-css-modules": "^1.1.0",
     "prettier-eslint": "^8.2.2",
+    "redux-mock-store": "^1.4.0",
     "webpack-dev-server": "^2.9.7"
   }
 }
