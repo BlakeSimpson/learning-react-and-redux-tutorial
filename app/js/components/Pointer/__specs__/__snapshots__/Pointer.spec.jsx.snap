@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConnectedPointer component maps store state to the props 1`] = `
+<Pointer
+  addFavourite={[Function]}
+  details={Object {}}
+  removeFavourite={[Function]}
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  x={1}
+  y={2}
+/>
+`;
+
+exports[`Pointer component matches the snapshot 1`] = `
+<div
+  className="undefined"
+  onClick={[Function]}
+  style={
+    Object {
+      "left": 99,
+      "top": 88,
+    }
+  }
+>
+  <div
+    className="undefined"
+  >
+    <header>
+      <h3>
+        Winterfell
+      </h3>
+      <div>
+        <a
+          href="#favourite"
+          onClick={[Function]}
+        >
+          –
+        </a>
+        <a
+          href="#toggle"
+          onClick={[Function]}
+        >
+          ×
+        </a>
+      </div>
+    </header>
+    <p>
+      House: 
+      Stark
+    </p>
+    <p>
+      Words: 
+      Winter is Coming
+    </p>
+  </div>
+</div>
+`;
